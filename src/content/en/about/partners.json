@@ -1,0 +1,17 @@
+[
+  {
+    "iconPath": "/logo-edf.svg",
+    "href": "https://example.com",
+    "label": "TechCorp Solutions"
+  },
+  {
+    "iconPath": "/logo-edf.svg",
+    "href": "https://example.com",
+    "label": "DataStream Industries"
+  },
+  {
+    "iconPath": "/logo-edf.svg",
+    "href": "https://example.com",
+    "label": "CloudEdge Systems"
+  }
+]

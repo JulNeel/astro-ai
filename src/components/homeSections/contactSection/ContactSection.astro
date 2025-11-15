@@ -1,0 +1,46 @@
+---
+import Container from "@components/layout/Container.astro";
+import BaseButton from "@components/ui/BaseButton.astro";
+import map from "@images/map.png";
+import { useTranslations } from "@locales/utils/useTranslations";
+import { Image } from "astro:assets";
+import ContactForm from "./ContactForm";
+
+const lang = Astro.currentLocale;
+const t = await useTranslations(lang);
+---
+
+<section class="flex min-h-screen bg-black" id="contact">
+  <Container variant="constrained" class="flex flex-col justify-around py-8 lg:pt-24 lg:pb-12">
+    <div class="bg-tertiary mx-auto mb-16 max-w-8/10 rounded-md p-4 text-center text-black">
+      <h4 class="mb-6 text-3xl font-bold lg:text-4xl">{t("contact-section.alert.title")}</h4>
+      <p class="mb-6 text-base lg:text-lg">
+        {t("contact-section.alert.baseline")}
+      </p>
+      <BaseButton variant="white" href="#contact-form" ariaLabel={t("contact-section.alert.button-label")}
+        >{t("contact-section.alert.button-label")}</BaseButton
+      >
+    </div>
+    <div class="grid lg:grid-cols-2">
+      <h3 class="text-secondary mb-6 text-center text-4xl font-bold lg:text-start">
+        {t("contact-section.heading.title")}
+      </h3>
+      <div class="relative lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-4">
+        <Image class="mb-12" src={map} alt="" width={760} height={482} />
+        <div class="absolute right-10 bottom-1/2 flex max-w-1/2 flex-col rounded-md bg-white p-4">
+          <div class="slg:text-4xl text-2xl font-bold text-black">{t("contact-section.map.institute")}</div>
+          <a href="https://maps.app.goo.gl/c4xyCMes5DLbjWU7A" class="text-contrast text-md underline lg:text-lg"
+            >{t("contact-section.map.address")}</a
+          >
+        </div>
+      </div>
+      <p
+        id="contact-form"
+        class="mb-6 text-center text-base text-white lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 lg:text-start"
+      >
+        {t("contact-section.heading.baseline")}
+      </p>
+      <ContactForm client:load lang={lang} />
+    </div>
+  </Container>
+</section>

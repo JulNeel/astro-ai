@@ -1,0 +1,78 @@
+---
+import type { IconListItem } from "@ts/iconListItem.type";
+
+interface Props {
+  items?: IconListItem[];
+  orientation?: "horizontal" | "vertical";
+  iconsSize?: "s" | "m" | "l";
+  wrap?: boolean;
+  class?: string;
+}
+
+const { items = [], orientation = "horizontal", iconsSize = "m", wrap = false, class: extraClass = "" } = Astro.props;
+
+const iconSizeClasses = {
+  s: "w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20",
+  m: "w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24",
+  l: "w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40",
+} as const;
+
+const containerClasses = [
+  "flex w-full gap-4",
+  extraClass,
+  orientation === "horizontal" ? "flex-row justify-between" : "flex-col",
+  wrap && "flex-wrap",
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+{
+  items.length > 0 && (
+    <ul class={containerClasses} role="list">
+      {items.map((item) => {
+        const isLink = Boolean(item.href);
+        const ItemTag = isLink ? "a" : "div";
+
+        const itemClasses = [
+          "flex flex-col items-center justify-start gap-4",
+          "rounded-lg p-4 text-center",
+          "transition-all duration-300",
+          isLink &&
+            "cursor-pointer hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900",
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+        const linkProps = isLink
+          ? {
+              href: item.href,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              "aria-label": item.title || "Lien externe",
+            }
+          : {};
+
+        return (
+          <li class="list-none">
+            <ItemTag class={itemClasses} {...linkProps}>
+              {item.iconSource && (
+                <div class={`${iconSizeClasses[iconsSize]} flex items-center justify-center`} aria-hidden="true">
+                  <img
+                    src={item.iconSource}
+                    alt={item.iconAlt || ""}
+                    class="h-full w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+              {item.title && <h4 class="h4 m-0 text-white">{item.title}</h4>}
+              {item.description && <p class="m-0 text-xs text-white md:text-base">{item.description}</p>}
+            </ItemTag>
+          </li>
+        );
+      })}
+    </ul>
+  )
+}

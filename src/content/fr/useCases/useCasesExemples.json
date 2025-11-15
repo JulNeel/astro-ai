@@ -1,0 +1,14 @@
+[
+  {
+    "iconPath": "/icon-binary-code-search.svg",
+    "description": "Compatibilité multiplateforme avec les protocoles standards de l'industrie"
+  },
+  {
+    "iconPath": "/icon-gears.svg",
+    "description": "Performance optimisée sur du matériel à ressources limitées"
+  },
+  {
+    "iconPath": "/icon-parameters.svg",
+    "description": "Traitement de données haute vitesse avec une surcharge minimale"
+  }
+]

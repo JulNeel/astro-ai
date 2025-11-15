@@ -1,0 +1,14 @@
+[
+  {
+    "iconPath": "/icon-binary-code-search.svg",
+    "description": "/Cross-platform compatibility with industry-standard protocols"
+  },
+  {
+    "iconPath": "/icon-gears.svg",
+    "description": "/Optimized performance on resource-constrained hardware"
+  },
+  {
+    "iconPath": "/icon-parameters.svg",
+    "description": "/High-speed data processing with minimal overhead"
+  }
+]

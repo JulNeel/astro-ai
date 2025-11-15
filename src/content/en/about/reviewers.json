@@ -1,0 +1,27 @@
+[
+  {
+    "fullName": "Dr. Sarah Johnson",
+    "position": "Research Director at Tech Institute",
+    "testimonial": "« This platform represents a breakthrough in making advanced technology both accessible and sustainable. The approach to edge computing has enabled research projects that simply weren't feasible with traditional infrastructure. »"
+  },
+  {
+    "fullName": "Michael Anderson",
+    "position": "IoT Lead at Global Energy Corp",
+    "testimonial": "« By implementing this solution for infrastructure monitoring, we reduced our operational costs by 95% compared to our previous cloud-based approach while maintaining 99.8% system reliability. »"
+  },
+  {
+    "fullName": "Lisa Martinez",
+    "position": "CTO at Innovation Labs",
+    "testimonial": "« The intuitive interface allowed our technical teams to deploy advanced systems for predictive analytics without requiring specialized expertise—a transformative change for our operations. »"
+  },
+  {
+    "fullName": "David Chen",
+    "position": "Engineering Manager at Smart Systems Inc",
+    "testimonial": "« Implementation was seamless and the performance improvements exceeded our expectations. The platform scaled effortlessly from pilot to full production deployment. »"
+  },
+  {
+    "fullName": "Rebecca Thompson",
+    "position": "Infrastructure Architect at Digital Enterprises",
+    "testimonial": "« The modular architecture and comprehensive API support made integration with our existing systems straightforward. Support team was responsive and knowledgeable throughout the process. »"
+  }
+]

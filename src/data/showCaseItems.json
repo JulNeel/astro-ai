@@ -1,0 +1,30 @@
+[
+  {
+    "id": "autoConfigurationItem",
+    "labelTranslationKey": "auto-configuration-label",
+    "descriptionTranslationKey": "auto-configuration-description",
+    "iconPath": "/icon-parameters.svg",
+    "imagePath": "/illustration1.webp"
+  },
+  {
+    "id": "aiAgentItem",
+    "labelTranslationKey": "model-marketplace-label",
+    "descriptionTranslationKey": "model-marketplace-description",
+    "iconPath": "/icon-stats.svg",
+    "imagePath": "/illustration2.jpg"
+  },
+  {
+    "id": "modelMarketplaceItem",
+    "labelTranslationKey": "ai-agent-label",
+    "descriptionTranslationKey": "ai-agent-description",
+    "iconPath": "/icon-ai-agent.svg",
+    "imagePath": "/illustration3.webp"
+  },
+  {
+    "id": "RealTimeTriggersItem",
+    "labelTranslationKey": "real-time-triggers-label",
+    "descriptionTranslationKey": "real-time-triggers-description",
+    "iconPath": "/icon-servers.svg",
+    "imagePath": "/illustration4.jpg"
+  }
+]

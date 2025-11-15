@@ -1,0 +1,89 @@
+{
+  "header": {
+    "buttons": {
+      "contact-us": "Contact us",
+      "learn-more": "Learn more"
+    }
+  },
+  "menu": {
+    "home": "Home",
+    "product": "Product",
+    "use-cases": "Use cases",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "product-section": {
+    "heading": {
+      "title": "Why choose \n Novexis ?",
+      "baseline": "The future of AI is efficient, accessible and environmentally responsible."
+    },
+    "buttons": {
+      "demo-request": "Request a demo"
+    }
+  },
+  "use-cases-section": {
+    "heading": {
+      "title": "What can \n Novexis do ?",
+      "baseline": "Transform your edge devices into intelligent systems with our comprehensive platform."
+    },
+    "showcase": {
+      "title": "No-Code AI Configuration",
+      "button": {
+        "auto-configuration-label": "auto-configuration",
+        "auto-configuration-description": "Recognizes connected hardware",
+        "model-marketplace-label": "Model marketplace",
+        "model-marketplace-description": "Access optimized models",
+        "ai-agent-label": "AI agent",
+        "ai-agent-description": "Customize with simple prompts",
+        "real-time-triggers-label": "Reat-Time Triggers",
+        "real-time-triggers-description": "Instant on-device decisions"
+      }
+    },
+    "technical-specifications": {
+      "title": "Technical specifications"
+    },
+    "use-cases-exemples": {
+      "title": "Use cases exemples"
+    }
+  },
+  "about-section": {
+    "heading": {
+      "title": "Trusted \n innovation",
+      "baseline": "Developed at Tech Institute with real-world applications across industries",
+      "partnersTitle": "Our Partners"
+    },
+    "button": {
+      "next": "Next",
+      "previous": "Previous"
+    }
+  },
+  "contact-section": {
+    "alert": {
+      "title": "Ready to explore what Novexis can do for ?",
+      "baseline": "Join our growing community of innovators deploying sustainable Al at the edge.",
+      "button-label": "Join Our Early Access Program"
+    },
+    "heading": {
+      "title": "GET IN TOUCH !",
+      "baseline": "Ready to deploy sustainable Al at the edge? Our team will get back to you within 24 hours."
+    },
+    "form": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send",
+      "mandatory-field-message": "This field is required",
+      "minimum-length-field-message": "This field should have at least 10 characters",
+      "invalid-email-message": "This email is invalid"
+    },
+    "map": {
+      "institute": "Tech Institute",
+      "address": "EuraTechnologies, 59000 Lille, France"
+    }
+  },
+  "footer": {
+    "copyright": "Novexis. All rights reserved."
+  }
+}

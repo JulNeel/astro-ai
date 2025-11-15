@@ -1,0 +1,14 @@
+[
+  {
+    "iconPath": "/icon-x.svg",
+    "href": "https://x.com/?lang=fr"
+  },
+  {
+    "iconPath": "/icon-linkedin.svg",
+    "href": "https://www.linkedin.com"
+  },
+  {
+    "iconPath": "/icon-reddit.svg",
+    "href": "https://www.reddit.com/"
+  }
+]

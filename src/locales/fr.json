@@ -1,0 +1,89 @@
+{
+  "header": {
+    "buttons": {
+      "contact-us": "Nous contacter",
+      "learn-more": "En savoir plus"
+    }
+  },
+  "menu": {
+    "home": "Accueil",
+    "product": "Produit",
+    "use-cases": "Utilisation",
+    "about": "A propos",
+    "contact": "Contact"
+  },
+  "product-section": {
+    "heading": {
+      "title": "Pourquoi \n choisir Novexis ?",
+      "baseline": "L’avenir de l’IA est efficace, accessible et respectueux de l’environnement."
+    },
+    "buttons": {
+      "demo-request": "Demander une demo"
+    }
+  },
+  "use-cases-section": {
+    "heading": {
+      "title": "Que peut \n faire Novexis ?",
+      "baseline": "Transformez vos périphériques en systèmes intelligents grâce à notre plateforme complète."
+    },
+    "showcase": {
+      "title": "Configuration sans code de l'IA",
+      "button": {
+        "auto-configuration-label": "Configuration automatique",
+        "auto-configuration-description": "Reconnaît le matériel connecté",
+        "model-marketplace-label": "Marché des modèles",
+        "model-marketplace-description": "Accédez à des modèles optimisés",
+        "ai-agent-label": "Agent IA",
+        "ai-agent-description": "Personnalisez avec des invites simples",
+        "real-time-triggers-label": "Déclencheurs en temps réel",
+        "real-time-triggers-description": "Décisions instantanées sur l’appareil"
+      }
+    },
+    "technical-specifications": {
+      "title": "Spécifications techniques"
+    },
+    "use-cases-exemples": {
+      "title": "Exemples de cas d'usage"
+    }
+  },
+  "about-section": {
+    "heading": {
+      "title": "Innovation de confiance",
+      "baseline": "Développé à l’Tech Institute avec des applications concrètes dans de nombreux secteurs",
+      "partnersTitle": "Nos partenaires"
+    },
+    "button": {
+      "next": "Suivant",
+      "previous": "Précédent"
+    }
+  },
+  "contact-section": {
+    "alert": {
+      "title": "Prêt à découvrir ce que Novexis peut faire pour vous ?",
+      "baseline": "Rejoignez notre communauté grandissante d’innovateurs qui déploient une IA durable à la périphérie.",
+      "button-label": "Rejoindre notre programme d’accès anticipé"
+    },
+    "heading": {
+      "title": "CONTACTEZ-NOUS!",
+      "baseline": "Prêt à déployer une IA durable à la périphérie ? Notre équipe vous répondra sous 24 heures."
+    },
+    "form": {
+      "first-name": "Prénom",
+      "last-name": "Nom",
+      "email": "E-mail",
+      "company": "Entreprise",
+      "message": "Message",
+      "submit": "Envoyer",
+      "mandatory-field-message": "Ce champ est obligatoire",
+      "minimum-length-field-message": "Ce champ doit avoir au moins 10 caractères",
+      "invalid-email-message": "Cet adresse e-mail n'est pas valide"
+    },
+    "map": {
+      "institute": "Tech Institute",
+      "address": "EuraTechnologies, 59000 Lille, France"
+    }
+  },
+  "footer": {
+    "copyright": "Novexis. All rights reserved."
+  }
+}

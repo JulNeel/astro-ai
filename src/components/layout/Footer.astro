@@ -1,0 +1,40 @@
+---
+import Container from "@components/layout/Container.astro";
+import BaseIconsList from "@components/ui/BaseIconsList.astro";
+import logo from "@images/logo_novexis-small.svg";
+import { useTranslations } from "@locales/utils/useTranslations";
+import type { IconListItem } from "@ts/iconListItem.type";
+import { Image } from "astro:assets";
+
+const { lang = "en" } = Astro.params;
+const t = await useTranslations(lang);
+interface SocialItem {
+  href: string;
+  iconPath: string;
+}
+
+const icons = import.meta.glob<{ default: ImageMetadata }>("../../images/icons/*.svg", {
+  eager: true,
+});
+const { default: socialItems }: { default: SocialItem[] } = await import(`../../data/social.json`);
+
+const socialMappedItems: IconListItem[] = socialItems.map((item) => {
+  const icon = icons[`../../images/icons${item.iconPath}`];
+  return {
+    ...item,
+    iconSource: icon?.default.src ?? "",
+  };
+});
+---
+
+<section class="flex bg-white">
+  <Container variant="constrained" class="flex flex-col items-center py-8 pt-6">
+    <div class="mb-32 flex max-w-3/4 flex-col items-center md:max-w-xl">
+      <Image src={logo} alt="" class="w-full pb-12" />
+      <BaseIconsList items={socialMappedItems} iconsSize="s" />
+    </div>
+    <div class="flex w-full justify-between">
+      <span>©{new Date().getFullYear()} {t("footer.copyright")}</span>
+    </div>
+  </Container>
+</section>

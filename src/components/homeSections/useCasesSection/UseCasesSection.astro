@@ -1,0 +1,79 @@
+---
+import ShowCase from "@components/homeSections/useCasesSection/ShowCase";
+import HomeSectionLayout from "@components/layout/HomeSectionLayout.astro";
+import SectionPost from "@components/layout/SectionPost.astro";
+import IconsList from "@components/ui/BaseIconsList.astro";
+import showCaseItems from "@data/showCaseItems.json";
+import imageNumberTwo from "@images/two.svg";
+import { useTranslations } from "@locales/utils/useTranslations";
+import type { IconListItem } from "@ts/iconListItem.type";
+import type { ShowcaseItem } from "@ts/showcaseItem.type";
+
+const lang = Astro.currentLocale;
+const t = await useTranslations(lang);
+
+const post = await import(`../../../content/${lang}/useCases/useCasesPost.mdx`);
+
+const { default: technicalSpecificationsItems }: { default: IconListItem[] } = await import(
+  `../../../content/${lang}/useCases/technicalSpecifications.json`
+);
+const { default: useCasesExemplesItems }: { default: IconListItem[] } = await import(
+  `../../../content/${lang}/useCases/useCasesExemples.json`
+);
+
+const images = import.meta.glob<{ default: ImageMetadata }>("../../../images/showcaseImages/*.{png,jpg,jpeg,webp}", {
+  eager: true,
+});
+const icons = import.meta.glob<{ default: ImageMetadata }>("../../../images/icons/*.svg", {
+  eager: true,
+});
+
+const technicalSpecificationsMappedItems: IconListItem[] = technicalSpecificationsItems.map((item) => {
+  const icon = icons[`../../../images/icons${item.iconPath}`];
+  return {
+    ...item,
+    iconSource: icon?.default.src ?? "",
+  };
+});
+
+const useCasesExemplesMappedItems: IconListItem[] = useCasesExemplesItems.map((item) => {
+  const icon = icons[`../../../images/icons${item.iconPath}`];
+  return {
+    ...item,
+    iconSource: icon?.default.src ?? "",
+  };
+});
+
+const showCaseMappedItems: ShowcaseItem[] = showCaseItems.map((item) => {
+  const image = images[`../../../images/showcaseImages${item.imagePath}`];
+  const icon = icons[`../../../images/icons${item.iconPath}`];
+  return {
+    ...item,
+    imageSource: image?.default.src ?? "",
+    iconSource: icon?.default.src ?? "",
+  };
+});
+---
+
+<HomeSectionLayout
+  id="use-cases"
+  title={t("use-cases-section.heading.title")}
+  baseLine={t("use-cases-section.heading.baseline")}
+  numberIconData={imageNumberTwo}
+  sectionNumber={2}
+  extraClass="bg-dark-grey"
+>
+  <ShowCase lang={lang} items={showCaseMappedItems} extraClass="pb-16 pt-8" client:load>
+    <SectionPost>
+      <post.Content />
+    </SectionPost>
+  </ShowCase>
+  <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-center">
+    <h3 class="h3 text-white">{t("use-cases-section.technical-specifications.title")}</h3>
+    <IconsList items={technicalSpecificationsMappedItems} iconsSize="s" />
+  </div>
+  <div class="flex flex-col gap-4 md:flex-row md:items-center">
+    <h3 class="h3 text-white">{t("use-cases-section.use-cases-exemples.title")}</h3>
+    <IconsList items={useCasesExemplesMappedItems} iconsSize="s" />
+  </div>
+</HomeSectionLayout>

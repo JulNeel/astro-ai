@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Efficient Architecture",
+    "description": "Systems operate on low-power hardware consuming minimal resources, reducing operational costs by 100x compared to cloud infrastructure."
+  },
+  {
+    "title": "Rapid Deployment",
+    "description": "Compatible with standard hardware platforms. Get started in minutes with automatic configuration.",
+    "imageName": "man_working_on_computer.webp"
+  },
+  {
+    "title": "Intuitive Interface",
+    "description": "Deploy sophisticated systems without technical expertise through our user-friendly dashboard."
+  },
+  {
+    "title": "Secure Processing",
+    "description": "Your data remains on your devices. Local processing means enhanced security and privacy."
+  },
+  {
+    "title": "Extensible Platform",
+    "description": "Community-driven marketplace for sharing optimized configurations and templates."
+  }
+]

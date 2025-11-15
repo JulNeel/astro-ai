@@ -1,0 +1,14 @@
+[
+  {
+    "iconPath": "/icon-cloud-connectors.svg",
+    "description": "/Supports multiple processor architectures and hardware platforms"
+  },
+  {
+    "iconPath": "/icon-ai-microship.svg",
+    "description": "/Runs on devices with minimal memory requirements"
+  },
+  {
+    "iconPath": "/icon-rocket.svg",
+    "description": "/Ultra-low latency for real-time processing tasks"
+  }
+]

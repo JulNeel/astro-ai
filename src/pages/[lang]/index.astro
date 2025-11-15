@@ -1,0 +1,41 @@
+---
+import "@styles/global.css";
+import ProductSection from "@components/homeSections/ProductSection.astro";
+import Header from "@components/layout/Header.astro";
+import UseCasesSection from "@components/homeSections/useCasesSection/UseCasesSection.astro";
+import AboutSection from "@components/homeSections/aboutSection/AboutSection.astro";
+import ContactSection from "@components/homeSections/contactSection/ContactSection.astro";
+import Footer from "@components/layout/Footer.astro";
+export async function getStaticPaths() {
+  const langs = ["fr", "en"];
+
+  return langs.map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- IMPORTANT SEO TODO: UPDATE WITH REAL URL -->
+    <link rel="canonical" href="https://mon-site.com/en/" />
+    <link rel="alternate" hreflang="en" href="https://mon-site.com/en/" />
+    <link rel="alternate" hreflang="fr" href="https://mon-site.com/fr/" />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Novexis</title>
+  </head>
+  <body class="bg-black">
+    <Header />
+    <ProductSection />
+    <UseCasesSection />
+    <AboutSection />
+    <ContactSection />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "fullName": "Dr. Sophie Laurent",
+    "position": "Directrice de recherche à l'Institut Technologique",
+    "testimonial": "« Cette plateforme représente une avancée majeure pour rendre la technologie avancée à la fois accessible et durable. L'approche du edge computing a permis de lancer des projets de recherche qui étaient tout simplement impossibles avec les infrastructures traditionnelles. »"
+  },
+  {
+    "fullName": "Pierre Dubois",
+    "position": "Responsable IoT chez Global Energy Corp",
+    "testimonial": "« En mettant en œuvre cette solution pour la surveillance d'infrastructure, nous avons réduit nos coûts opérationnels de 95 % par rapport à notre précédente solution basée sur le cloud, tout en maintenant une fiabilité système de 99,8 %. »"
+  },
+  {
+    "fullName": "Marie Chen",
+    "position": "Directrice technique chez Innovation Labs",
+    "testimonial": "« L'interface intuitive a permis à nos équipes techniques de déployer des systèmes avancés pour l'analytique prédictive sans avoir besoin de compétences spécialisées — un véritable changement de paradigme pour nos opérations. »"
+  }
+]

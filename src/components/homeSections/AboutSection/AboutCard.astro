@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import Icon from "@images/icons/icon-group-talk.svg";
+import { type Reviewer } from "@ts/reviewers.type";
+
+interface Props extends Reviewer {}
+
+const { fullName, position, testimonial } = Astro.props;
+---
+
+<div class="border-tertiary flex h-full flex-col gap-4 rounded-md border bg-black p-4">
+  <Image src={Icon} alt="" />
+  <span class="text-2xl font-bold text-white">{fullName}</span>
+  <span class="text-tertiary text-xl">{position}</span>
+  <p class="text-white">{testimonial}</p>
+</div>

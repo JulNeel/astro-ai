@@ -1,0 +1,100 @@
+---
+import HomeSectionLayout from "@components/layout/HomeSectionLayout.astro";
+import SectionPost from "@components/layout/SectionPost.astro";
+import BaseButton from "@components/ui/BaseButton.astro";
+import BaseTile from "@components/ui/BaseTile.astro";
+import toggleIcon from "@images/icons/icon-toggle.svg";
+import illustration from "@images/illustrations/woman-among-computers-screen.png";
+import imageNumberOne from "@images/one.svg";
+import type { Locale } from "@locales/i18n.config";
+import { useTranslations } from "@locales/utils/useTranslations";
+import { Image } from "astro:assets";
+
+const lang = Astro.currentLocale as Locale;
+const t = await useTranslations(lang);
+
+const sectionImages = import.meta.glob("../../images/illustrations/*.{webp,png,jpg,jpeg}", { eager: true }) as Record<
+  string,
+  any
+>;
+
+function resolveImage(fileName?: string) {
+  if (!fileName) return null;
+  const entry = Object.entries(sectionImages).find(([path]) => path.endsWith(fileName));
+  return entry ? entry[1].default : null;
+}
+
+interface KeyBenefit {
+  title: string;
+  description: string;
+  imageName?: string;
+}
+const keyBenefits: KeyBenefit[] = (await import(`../../content/${lang}/product/keyBenefits.json`)).default;
+const post = await import(`../../content/${lang}/product/productPost.mdx`);
+---
+
+<HomeSectionLayout
+  id="product"
+  title={t("product-section.heading.title")}
+  baseLine={t("product-section.heading.baseline")}
+  numberIconData={imageNumberOne}
+  sectionNumber={1}
+  extraClass="bg-black"
+>
+  <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+    {
+      keyBenefits.map((keyBenefit, index) => {
+        const isLast = index === keyBenefits.length - 1;
+        const isOdd = keyBenefits.length % 2 !== 0;
+        const mobileFullWidth = isOdd && isLast ? "col-span-2 md:col-span-1" : "";
+        const desktopFullWidth = !!keyBenefit.imageName ? "md:col-span-2" : "";
+        const img = resolveImage(keyBenefit.imageName);
+
+        return (
+          <BaseTile textColor="text-white" extraClass={`${mobileFullWidth} ${desktopFullWidth}`}>
+            <Image class="mb-2" src={toggleIcon} alt="Logo Novexis" />
+            <div class="flex items-start">
+              <div>
+                <h3 class="mb-2 text-xl font-bold lg:text-3xl">{keyBenefit.title}</h3>
+                <p class="text-base">{keyBenefit.description}</p>
+              </div>
+              {img && (
+                <Image
+                  src={img}
+                  alt={keyBenefit.title}
+                  class="ml-2 hidden max-w-1/2 rounded-md md:block"
+                  loading="lazy"
+                  format="webp"
+                  widths={[320, 640, 960]}
+                  sizes="(max-width: 600px) 100%, 50%"
+                />
+              )}
+            </div>
+          </BaseTile>
+        );
+      })
+    }
+  </div>
+  <div class="my-16 grid justify-items-center gap-4 lg:grid-cols-2 lg:justify-items-start">
+    <div class="items-center">
+      <SectionPost>
+        <post.Content />
+      </SectionPost>
+    </div>
+    <Image
+      src={illustration}
+      alt=""
+      class="mb-7 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-4"
+      sizes="(max-width: 640px) 100vw, 40vw"
+      loading="lazy"
+    />
+    <BaseButton
+      variant="outline"
+      outlineColor="white"
+      ariaLabel={t("product-section.buttons.demo-request")}
+      href="#contact-form"
+    >
+      {t("product-section.buttons.demo-request")}
+    </BaseButton>
+  </div>
+</HomeSectionLayout>

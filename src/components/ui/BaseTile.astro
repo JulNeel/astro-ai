@@ -1,0 +1,25 @@
+---
+export interface Props {
+  borderColor?: string; // ex: 'border-primary'
+  textColor?: string; // ex: 'text-primary'
+  bgColor?: string; // ex: 'bg-transparent'
+  rounded?: string; // ex: 'rounded-lg'
+  padding?: string; // ex: 'p-4'
+  shadow?: string; // ex: 'shadow-md'
+  extraClass?: string; // ex: 'hover:shadow-md transition-shadow'
+}
+
+const {
+  borderColor = "border-primary",
+  textColor = "text-primary",
+  bgColor = "bg-transparent",
+  rounded = "rounded-lg",
+  padding = "p-4",
+  shadow = "",
+  extraClass = "",
+} = Astro.props as Props;
+---
+
+<div class={`border ${borderColor} ${textColor} ${bgColor} ${rounded} ${padding} ${shadow} ${extraClass}`}>
+  <slot />
+</div>

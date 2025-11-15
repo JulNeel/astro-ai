@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Architecture Efficace",
+    "description": "Des systèmes fonctionnant sur du matériel basse consommation avec des ressources minimales, réduisant les coûts opérationnels par 100 par rapport à l'infrastructure cloud."
+  },
+  {
+    "title": "Déploiement Rapide",
+    "description": "Compatible avec les plateformes matérielles standards. Commencez en quelques minutes grâce à la configuration automatique.",
+    "imageName": "man_working_on_computer.webp"
+  },
+  {
+    "title": "Interface Intuitive",
+    "description": "Déployez des systèmes sophistiqués sans expertise technique grâce à notre tableau de bord convivial."
+  },
+  {
+    "title": "Traitement Sécurisé",
+    "description": "Vos données restent sur vos appareils. Le traitement local signifie une sécurité et une confidentialité accrues."
+  },
+  {
+    "title": "Plateforme Extensible",
+    "description": "Place de marché communautaire pour partager des configurations et des modèles optimisés."
+  }
+]

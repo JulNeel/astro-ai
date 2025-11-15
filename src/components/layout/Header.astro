@@ -1,0 +1,71 @@
+---
+import menuData from "@data/menuItems.json";
+import downArrow from "@images/arrow_down.svg";
+import logo from "@images/logo_novexis.svg";
+import { useTranslations } from "@locales/utils/useTranslations";
+import type { MenuItem } from "@ts/menuItem.type.ts";
+import { Image } from "astro:assets";
+import BaseButton from "@components/ui/BaseButton.astro";
+import Menu from "@components/layout/Menu.tsx";
+import poster from "@images/novexis_bg_poster.jpg";
+import { getImage } from "astro:assets";
+
+const { lang = "en" } = Astro.params;
+const t = await useTranslations(lang);
+const baseLine = await import(`../../content/${lang}/site/baseLine.mdx`);
+const items: MenuItem[] = menuData;
+
+const optimizedPoster = await getImage({
+  src: poster,
+  width: 1920,
+  format: "webp",
+  quality: 80,
+});
+---
+
+<header
+  id="home"
+  class="header relative flex h-[100vh] flex-col content-between items-center overflow-hidden text-white lg:pt-24"
+>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster={optimizedPoster.src}
+    class="absolute inset-0 h-full w-full object-cover"
+  >
+    <source src="../../videos/novexis_bg_video.mp4" type="video/mp4" />
+    Browser does not support HTML5.
+  </video>
+  <div class="absolute inset-0 bg-black opacity-85"></div>
+  <div class="relative flex min-h-full w-full flex-col px-6 text-center">
+    <Menu items={items} lang={lang} client:load />
+    <div class="align-self-center m-auto flex flex-col items-center md:max-w-3xl">
+      <Image class="mb-12" src={logo} alt="Logo Novexis" loading="eager" />
+      <baseLine.Content />
+      <div class="flex flex-wrap justify-center gap-4 pt-5">
+        <BaseButton variant="white" href="#contact-form" ariaLabel={t("header.buttons.contact-us")}
+          >{t("header.buttons.contact-us")}</BaseButton
+        >
+        <BaseButton variant="outline" href="#product">{t("header.buttons.learn-more")}</BaseButton>
+      </div>
+      <a class="mt-16" href="#product">
+        <Image class="mb-12" src={downArrow} width="50" alt="scroll down" loading="eager" />
+      </a>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  .header {
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+  }
+</style>

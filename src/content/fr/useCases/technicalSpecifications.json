@@ -1,0 +1,14 @@
+[
+  {
+    "iconPath": "/icon-cloud-connectors.svg",
+    "description": "Prend en charge plusieurs architectures de processeurs et plateformes matérielles"
+  },
+  {
+    "iconPath": "/icon-ai-microship.svg",
+    "description": "Fonctionne sur des appareils avec des exigences mémoire minimales"
+  },
+  {
+    "iconPath": "/icon-rocket.svg",
+    "description": "Latence ultra-faible pour les tâches de traitement en temps réel"
+  }
+]
